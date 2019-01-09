@@ -1,5 +1,6 @@
 package fh_kufstein.ac.at.Aufgabe1;
 
+
 import javax.swing.*;
 
 public class Main {
@@ -15,17 +16,34 @@ public class Main {
             System.out.println("Das Ergebnis der Division ist: \n" + (a/b) + "\n");
         }
         System.out.println("Aufgabe 2:___________________________________________________________________");
-        divisionMitTryCatch(30,3);
+        divisionMitTryCatch(9,3);
         divisionMitTryCatch(10,0);
+        divisionMitTryCatch(34443443,9);
     }
+
 
     public static void divisionMitTryCatch(int a,int b)
     {
         try {
             System.out.println("Das Ergebnis der Division ist: " + (a/b));
 
-        }catch (Exception e){
-            System.err.println("Fehler da Divisor oder Divident 0 ist!");
+            //Im Catch Block kann man zuerst alle Exception verwenden. danch
+            //links in der ZeilenNummer den roten Punkt aktivieren, damit das Programm auf dieser Stelle Stehen bleit
+            //dann sieht man (in diesem Fall "ArithmeticException) den Fehler und kann diese Exception verwenden.
+        }
+
+        //Aufgabe 3:
+        catch (NumberFormatException e){
+            System.err.println("NumberFormatExeption-Fehler da Divisor oder Divident 0 ist!");
+        }
+        catch (ArithmeticException e){
+            System.err.println("ArithmeticException-Fehler da Divisor oder Divident 0 ist!");
+        }
+        catch (NullPointerException e){
+            System.err.println("NullPointerException-Fehler da Divisor oder Divident 0 ist!");
+        }
+        catch (IndexOutOfBoundsException e){
+            System.err.println("IndexOutOfBoundsException-Fehler da Divisor oder Divident 0 ist!");
         }
     }
 }
